@@ -10,6 +10,10 @@ def hey():
     if request.method == 'POST':
         area = request.form['area']
         print(area)
+        return render_template('classification.html',area=area)
+    else:
+        return render_template('classification.html')
+
 
 if __name__ == '__main__':
     app.run()

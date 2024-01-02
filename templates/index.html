@@ -10,29 +10,45 @@
     form {
         display: inline-block;
     }
+    .row {
+    background: #f6f6f6;
+    border: 1px solid #ccc;
+    overflow: hidden;
+    padding: 10px;
+    }
+    .col {
+    float: left;
+    width: 50%
+    }
     </style>
 <form action="name" method="post">
     <div style="background-color:#025246 ;padding:10px">
     <h2 style="color:white;text-align:center;">Dry Bean Classification </h2>
     </div>
-    <br>
-    <br>
-    <label for="area">Enter Area: </label>
-    <input type="text" id="area" name="area"  required>
-    <br>
-    <br>
-    <label for="sw">Enter Sepal Width: </label>
-    <input type="text" id="sw"  name="sw"  required>
-    <br>
-    <br>
-    <label for="pl">Enter Petal Length: </label>
-    <input type="text" id="pl" name="pl"  required>
-    <br>
-    <br>
-    <label for="pw">Enter Petal width: </label>
-    <input type="text" id="pw" name="pw"  required>
-    <br>
-    <br>
+
+    <div>
+        <table>
+            <tr>
+              <td><label for="area">Area: </label>
+              <td><input type="text" id="area" name="area"  required></td>
+              <td><label for="roundness">Roundness: </label>
+              <td><input type="text" id="roundness" name="roundness"  required></td>
+            </tr>
+            <tr>
+                <td><label for="aspectratio">Aspect Ratio: </label>
+                <td><input type="text" id="aspectratio" name="aspectratio"  required></td>
+                <td><label for="compactness">Compactness: </label>
+                <td><input type="text" id="compactness" name="compactness"  required></td>
+              </tr>
+              <tr>
+                <td><label for="area">Area: </label>
+                <td><input type="text" id="area" name="area"  required></td>
+                <td><label for="area">Area: </label>
+                <td><input type="text" id="area" name="area"  required></td>
+              </tr>
+        </table>
+        
+    </div>
     <input type="submit">
 </form>
 
