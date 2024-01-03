@@ -20,34 +20,49 @@
     float: left;
     width: 50%
     }
+    .left {
+    text-align: left;
+    padding: 0 20px;
+    }
     </style>
-<form action="name" method="post">
-    <div style="background-color:#025246 ;padding:10px">
+<form action="classification" method="post">
+    <div style="background-color:#025246 ;padding:10px; margin-top:30px;margin-bottom:30px">
     <h2 style="color:white;text-align:center;">Dry Bean Classification </h2>
     </div>
 
-    <div>
+    <div style="border: 1px solid #9e9b9b; padding: 10px;">
         <table>
             <tr>
-              <td><label for="area">Area: </label>
+              <td class="left"><label for="area">Area: </label>
               <td><input type="text" id="area" name="area"  required></td>
-              <td><label for="roundness">Roundness: </label>
+              <td class="left"><label for="roundness">Roundness: </label>
               <td><input type="text" id="roundness" name="roundness"  required></td>
             </tr>
             <tr>
-                <td><label for="aspectratio">Aspect Ratio: </label>
+                <td class="left"><label for="aspectratio">Aspect Ratio: </label>
                 <td><input type="text" id="aspectratio" name="aspectratio"  required></td>
-                <td><label for="compactness">Compactness: </label>
+                <td class="left"><label for="compactness">Compactness: </label>
                 <td><input type="text" id="compactness" name="compactness"  required></td>
               </tr>
               <tr>
-                <td><label for="area">Area: </label>
-                <td><input type="text" id="area" name="area"  required></td>
-                <td><label for="area">Area: </label>
-                <td><input type="text" id="area" name="area"  required></td>
+                <td class="left"><label for="eccentricity">Eccentricity: </label>
+                <td><input type="text" id="eccentricity" name="eccentricity"  required></td>
+                <td class="left"><label for="sf1">ShapeFactor1: </label>
+                <td><input type="text" id="sf1" name="sf1"  required></td>
               </tr>
-        </table>
-        
+              <tr>
+                <td class="left"><label for="extent">Extent: </label>
+                <td><input type="text" id="extent" name="extent"  required></td>
+                <td class="left"><label for="sf2">ShapeFactor2: </label>
+                <td><input type="text" id="sf2" name="sf2"  required></td>
+              </tr>
+              <tr>
+                <td class="left"><label for="solidity">Solidity: </label>
+                <td><input type="text" id="solidity" name="solidity"  required></td>
+                <td class="left"><label for="sf3">ShapeFactor3: </label>
+                <td><input type="text" id="sf3" name="sf3"  required></td>
+              </tr>
+        </table>      
     </div>
     <input type="submit">
 </form>
