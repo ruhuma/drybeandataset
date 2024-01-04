@@ -2,6 +2,8 @@ from flask import Flask, render_template, request
 import pickle
 import numpy as np
 from sklearn.preprocessing import StandardScaler
+import joblib
+import pandas as pd
 
 app = Flask(__name__)
 @app.route('/')
@@ -21,14 +23,23 @@ def hey():
         sf1 = request.form['sf1']
         sf2 = request.form['sf2']
         sf4 = request.form['sf4']
-        sscaler = StandardScaler()
+        #input = np.array([[area,aspectration,eccentricity,extent,solidity,roundness,compactness,sf1,sf2,sf4]]).astype(np.float64)
+        #sscaler = StandardScaler()
+        input_data = np.array([[39188.0,1.132879,0.588252,0.781313,0.989960,0.951599,0.939219,0.006806,0.003267,0.999349]])
         feature_names = ['Area','AspectRation','Eccentricity','Extent','Solidity','roundness','Compactness','ShapeFactor1','ShapeFactor2','ShapeFactor4']
+        print(input_data)
         model = pickle.load(open('best_svm_model.pkl','rb'))
+               
+        scaler = joblib.load('stdscaler.pkl')
+
+        input_scaled = scaler.fit_transform(input_data)
         
-        input = np.array([[area,aspectration,eccentricity,extent,solidity,roundness,compactness,sf1,sf2,sf4]]).astype(np.float64)
-        drybeanclassified = model.predict(input)
+        print(input_scaled)
+        
+        drybeanclassified = model.predict(input_scaled)
+
         print(drybeanclassified)
-        if drybeanclassified == [0]:
+        if drybeanclassified == 0:
             classification = 'BARBUNYA'
         elif drybeanclassified== 1:
             classification = 'BOMBAY'
