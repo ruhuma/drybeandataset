@@ -1,10 +1,38 @@
 <!DOCTYPE html>
 <html>
-    <title>Dry Bean Data Set Classification </title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Result Page </title> 
+      </head>
 <body>
+    <style>
+        
+        body {
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      background-image: url('images/beans.jpg'); /* Specify the path to your image */
+      background-size: cover; /* Cover the entire viewport */
+      background-position: center; /* Center the image */
+      background-repeat: no-repeat; /* Do not repeat the image */
+      background-color:darkgray;
 
-hi {{area}}
-
+      
+    }
+    form {
+        display: inline-block;
+    }
+    </style>
+    <form>
+    <div style="background-color:#025246 ;padding:10px;">
+        <h2 style="color:white;text-align:center;">Dry Bean Classification </h2>
+        </div>
+    <div style="border: 1px solid #dad3d3; padding:50px 10px;  background-color: white; height:1040px; width:650px">
+<h2>
+The type of dry bean predicted is: {{area}}
+</h2></div>
+</form>
 </body>
 
 </html>
