@@ -4,6 +4,7 @@ import numpy as np
 from sklearn.preprocessing import StandardScaler
 import joblib
 import pandas as pd
+import os
 
 app = Flask(__name__)
 @app.route('/')
@@ -23,20 +24,24 @@ def hey():
         sf1 = request.form['sf1']
         sf2 = request.form['sf2']
         sf4 = request.form['sf4']
-        #input = np.array([[area,aspectration,eccentricity,extent,solidity,roundness,compactness,sf1,sf2,sf4]]).astype(np.float64)
-        #sscaler = StandardScaler()
-        input_data = np.array([[39188.0,1.132879,0.588252,0.781313,0.989960,0.951599,0.939219,0.006806,0.003267,0.999349]])
-        feature_names = ['Area','AspectRation','Eccentricity','Extent','Solidity','roundness','Compactness','ShapeFactor1','ShapeFactor2','ShapeFactor4']
-        print(input_data)
+        input_array = np.array([[area,aspectration,eccentricity,extent,solidity,roundness,compactness,sf1,sf2,sf4]]).astype(np.float64)
+        #input =[[41487.0,1.688753,0.805826,0.689176,0.976555,0.783156,0.768550,0.007208,0.001551,0.997493]]                       
         model = pickle.load(open('best_svm_model.pkl','rb'))
                
-        scaler = joblib.load('stdscaler.pkl')
-
-        input_scaled = scaler.fit_transform(input_data)
+        #scaler = joblib.load('stdscaler.pkl')
+        #scaler = StandardScaler()
+        #input_scaled = scaler.fit_transform(input_array)
+        #X_data = pd.DataFrame(input_scaled,columns=['Area','AspectRation','Eccentricity','Extent','Solidity','roundness','Compactness','ShapeFactor1','ShapeFactor2','ShapeFactor4'])
+        #input_scaled = scaler.fit_transform(X_data)
         
-        print(input_scaled)
-        
-        drybeanclassified = model.predict(input_scaled)
+        # Load the scaler from the pickled file
+        scaler = joblib.load("stdscaler_G.pkl")
+        input_scaled_G = scaler.transform(input_array)
+        print('Input scaled',input_scaled_G)
+                
+        drybeanclassified = model.predict(input_scaled_G)
+        print('Input Array',input)
+        print('Scaled Array',input_scaled_G)
 
         print(drybeanclassified)
         if drybeanclassified == 0:
