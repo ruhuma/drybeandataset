@@ -18,10 +18,12 @@
       background-position: center; /* Center the image */
       background-repeat: no-repeat; /* Do not repeat the image */
       background-color:darkgray;
-      
-    }
+      font-family: Arial, Helvetica, sans-serif;
+          }
+          
     form {
         display: inline-block;
+        padding: 20px;
     }
     .row {
     background: #f6f6f6;
@@ -37,6 +39,44 @@
     text-align: left;
     padding: 0 20px;
     }
+
+    .tbox{
+    border-radius:10px;
+    padding:6px 2px;
+    border: 1px solid #ccc;
+
+    }
+
+    
+
+    .innerdiv{
+      border: 1px solid #dad3d3; 
+      padding:50px 10px;
+      background-color: white; 
+      height:1040px;
+      font-size: small;
+
+
+    }
+    .sbtbutton{
+      display: inline-block;
+      outline:none;
+      line-height: 1;
+      border-radius: 500px;
+      transition-property: background-color,border-color,color,box-shadow,filter;
+      border: 1px solid transparent;
+      min-width:160px;
+      white-space:normal;
+      font-weight:700;
+      text-align:center;
+      padding: 14px 40px;
+      background-color: #025246;
+      height:48px;
+      color: #fff;
+      font-size: 16px;
+      font-weight: lighter;
+    }
+
     tr {
             margin-bottom: 10px; /* Adjust the margin as needed */
         }
@@ -47,44 +87,44 @@
         }
     </style>
 <form action="classification" method="post">
-    <div style="background-color:#025246 ;padding:10px;">
-    <h2 style="color:white;text-align:center;">Dry Bean Classification </h2>
+    <div style="background-color:#025246 ;padding:10px; ">
+    <h2 style="color:white;text-align:center;">DRY BEAN CLASSIFICATION </h2>
     </div>
     
-    <div style="border: 1px solid #dad3d3; padding:50px 10px;  background-color: white; height:1040px">
+    <div class="innerdiv">
         <table>
             <tr style="padding:25px">
               <td class="left"><label for="area">Area: </label>
-              <td><input type="text" id="area" name="area"  required></td>
+              <td><input class="tbox" type="text" id="area" name="area"  required></td>
               <td class="left"><label for="roundness">Roundness: </label>
-              <td><input type="text" id="roundness" name="roundness"  required></td>
+              <td><input class="tbox" type="text" id="roundness" name="roundness"  required></td>
             </tr>
             <tr style="padding:25px">
                 <td class="left"><label for="aspectratio">Aspect Ratio: </label>
-                <td><input type="text" id="aspectratio" name="aspectratio"  required></td>
+                <td><input class="tbox" type="text" id="aspectratio" name="aspectratio"  required></td>
                 <td class="left"><label for="compactness">Compactness: </label>
-                <td><input type="text" id="compactness" name="compactness"  required></td>
+                <td><input class="tbox" type="text" id="compactness" name="compactness"  required></td>
               </tr>
               <tr style="padding:25px">
                 <td class="left"><label for="eccentricity">Eccentricity: </label>
-                <td><input type="text" id="eccentricity" name="eccentricity"  required></td>
+                <td><input class="tbox" type="text" id="eccentricity" name="eccentricity"  required></td>
                 <td class="left"><label for="sf1">ShapeFactor1: </label>
-                <td><input type="text" id="sf1" name="sf1"  required></td>
+                <td><input class="tbox" type="text" id="sf1" name="sf1"  required></td>
               </tr>
               <tr style="padding:25px">
                 <td class="left"><label for="extent">Extent: </label>
-                <td><input type="text" id="extent" name="extent"  required></td>
+                <td><input class="tbox" type="text" id="extent" name="extent"  required></td>
                 <td class="left"><label for="sf2">ShapeFactor2: </label>
-                <td><input type="text" id="sf2" name="sf2"  required></td>
+                <td><input class="tbox" type="text" id="sf2" name="sf2"  required></td>
               </tr>
               <tr style="padding:25px">
                 <td class="left"><label for="solidity">Solidity: </label>
-                <td><input type="text" id="solidity" name="solidity"  required></td>
+                <td><input class="tbox" type="text" id="solidity" name="solidity"  required></td>
                 <td class="left"><label for="sf4">ShapeFactor4: </label>
-                <td><input type="text" id="sf4" name="sf4"  required></td>
+                <td><input class="tbox" type="text" id="sf4" name="sf4"  required></td>
               </tr>
-        </table>
-        <input type="submit">      
+        </table></br>
+        <input type="submit" value="SUBMIT" class="sbtbutton">      
     </div>
     
 </form>
